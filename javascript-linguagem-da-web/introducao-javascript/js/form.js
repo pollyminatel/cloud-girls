@@ -1,14 +1,12 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 botaoAdicionar.addEventListener("click", function(event){
     event.preventDefault();
-    console.log("Olá, eu fui clicado");
 
     var form = document.querySelector("#form-adiciona");
     var paciente = obtemPacienteDoFormulario(form);
     var pacienteTr = montaTr(paciente);
     
     var erros = validaPaciente(paciente);
-    console.log(erros);
     if(erros.length > 0){
         exibeMensagensDeErro(erros);
         
