@@ -20,6 +20,11 @@ function atualizaTamanhoFrase(){
     tamanhoFrase.text(numPalavras);
 };
 
+function atualizaTempoInicial(tempo) {
+    tempoInicial = tempo;
+    $("#tempo-digitacao").text(tempo);
+}
+
 function inicializaContadores(){    
     campo.on("input",function(){
         var conteudo = campo.val();
@@ -53,8 +58,11 @@ function finalizaJogo(){
 };
 
 function inicializaMarcadores() {
-    var frase = $(".frase").text();
     campo.on("input", function() {
+        var tempoRestante = $("#tempo-digitacao").text();
+
+        var frase = $(".frase").text();
+
         var digitado = campo.val();
         var comparavel = frase.substr(0 , digitado.length);
 
@@ -67,7 +75,6 @@ function inicializaMarcadores() {
         }
     });
 }
-
 
 
 function reniciaJogo(){    
