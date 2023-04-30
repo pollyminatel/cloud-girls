@@ -12,3 +12,20 @@ function trocaFraseAleatoria(data) {
     atualizaTamanhoFrase();
     atualizaTempoInicial(data[numeroAleatorio].tempo);
 }
+
+
+function fraseAleatoria() {
+
+    $("#spinner").toggle();
+
+    $.get("http://localhost:3000/frases", trocaFraseAleatoria)
+    .fail(function(){
+        $("#erro").toggle();
+        setTimeout(function(){
+            $("#erro").toggle();
+        },1500);
+    })
+    .always(function(){ //sempre escondendo o spinner
+        $("#spinner").toggle();
+    });
+}
