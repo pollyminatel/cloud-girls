@@ -11,6 +11,8 @@ $(function(){
         event.preventDefault();
         $(this).parent().parent().remove();
     })
+
+    atualizaPlacar();
 });
 
 function atualizaTamanhoFrase(){
