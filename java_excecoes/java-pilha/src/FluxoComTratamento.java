@@ -21,10 +21,9 @@ public class FluxoComTratamento {
     private static void metodo2() {
         System.out.println("Ini do metodo2");
         for(int i = 1; i <= 5; i++) {
-            System.out.println(i);
-            //int a = i / 0;          
+            System.out.println(i);        
             Conta c = null;
-            c.deposita();
+            //c.deposita();
         }
         System.out.println("Fim do metodo2");
     }
